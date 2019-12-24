@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Hola Mundo</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/bootstrap/dist/css/bootstrap.min.css" th:href="@{/bootstrap/dist/css/bootstrap.min.css}"
+          rel="stylesheet"/>
+    <link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container-fluid">
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <th>Nombre</th>
+                            <td th:text="${customer.name}"></td>
+                        </tr>
+                        <tr>
+                            <th>Apellido</th>
+                            <td th:text="${customer.lastname}"></td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td th:text="${customer.email}"></td>
+                        </tr>
+                        <tr>
+                            <th>Cedula</th>
+                            <td th:text="${customer.document}"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form action="#" th:action="@{/customers/{id}(id=${customer.id})}" method="POST"
+                  th:object="${uploadFile}"
+                  enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <th>Seleccionar documento</th>
+                        <td><input th:field="*{file}" type="file" name=""></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <button type="submit" class="btn btn-primary">Cargar</button>
+                        </th>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

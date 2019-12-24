@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head><title>Hola Mundo</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="../static/bootstrap/dist/css/bootstrap.min.css" th:href="@{/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet" />
+        <link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a th:href="@{/customers/create}">Nuevo Cliente</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Apellido</th>
+                                                <th>Correo</th>
+                                                <th>Numero de documento</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="customer : ${customers}">
+                                                <td><span th:text="${customer.name}"></span></td>
+                                                <td><span th:text="${customer.lastname}"></span></td>
+                                                <td><span th:text="${customer.email}"></span></td>
+                                                <td><span th:text="${customer.document}"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+        <script src="../static/bootstrap/dist/js/bootstrap.min.js" th:src="@{/bootstrap/dist/js/bootstrap.min.js}"></script>
+    </body>
+</html>
