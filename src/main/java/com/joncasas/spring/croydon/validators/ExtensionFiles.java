@@ -6,20 +6,16 @@
 package com.joncasas.spring.croydon.validators;
 
 import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import javax.validation.Constraint;
 import javax.validation.Payload;
-
-import org.hibernate.annotations.Target;
 
 /**
  * @author jonathan
  */
 @Documented
 @Constraint(validatedBy = ExtensionFileValidator.class)
-//@Target(ElementType .METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ExtensionFiles {
 

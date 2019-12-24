@@ -5,78 +5,78 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Hola Mundo</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="../static/bootstrap/dist/css/bootstrap.min.css" th:href="@{/bootstrap/dist/css/bootstrap.min.css}"
-          rel="stylesheet"/>
-    <link href="../static/css/index.css" th:href="@{/css/index.css}" rel="stylesheet"/>
-</head>
-<body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form action="#" th:action="@{/customers/create}" th:object="${customerCreate}"
-                                  method="post">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="name">Nombre</label>
-                                            <input type="text" th:field="*{name}" class="form-control" id="name"
-                                                   aria-describedby="nameHelp">
-                                            <small id="nameHelp" class="form-text text-muted">Nombre del
-                                                cliente.</small>
+    <head><title>Hola Mundo</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link href="../public/static/bootstrap/dist/css/bootstrap.min.css" th:href="@{/public/bootstrap/dist/css/bootstrap.min.css}"
+              rel="stylesheet"/>
+        <link href="../public/static/css/index.css" th:href="@{/public/css/index.css}" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form action="#" th:action="@{/customers/create}" th:object="${customerCreate}"
+                                          method="post">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="name">Nombre</label>
+                                                    <input type="text" th:field="*{name}" class="form-control" id="name"
+                                                           aria-describedby="nameHelp">
+                                                    <small id="nameHelp" class="form-text text-muted">Nombre del
+                                                        cliente.</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="lastname">Apellido</label>
+                                                    <input type="text" th:field="*{lastname}" class="form-control" id="lastname"
+                                                           aria-describedby="lastnameHelp">
+                                                    <small id="lastnameHelp" class="form-text text-muted">Apellido del
+                                                        cliente.</small>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="lastname">Apellido</label>
-                                            <input type="text" th:field="*{lastname}" class="form-control" id="lastname"
-                                                   aria-describedby="lastnameHelp">
-                                            <small id="lastnameHelp" class="form-text text-muted">Apellido del
-                                                cliente.</small>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="email">Correo</label>
+                                                    <input type="email" th:field="*{email}" class="form-control" id="email"
+                                                           aria-describedby="emailHelp">
+                                                    <small id="emailHelp" class="form-text text-muted">Direccion de correo del
+                                                        cliente.</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="document">Numero de documento</label>
+                                                    <input type="text" th:field="*{document}" class="form-control" id="document"
+                                                           aria-describedby="documentHelp">
+                                                    <small id="documentHelp" class="form-text text-muted">Numero de documento
+                                                        del cliente.</small>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <button type="submit" class="btn btn-primary">Registrar cliente</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="email">Correo</label>
-                                            <input type="email" th:field="*{email}" class="form-control" id="email"
-                                                   aria-describedby="emailHelp">
-                                            <small id="emailHelp" class="form-text text-muted">Direccion de correo del
-                                                cliente.</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="document">Numero de documento</label>
-                                            <input type="text" th:field="*{document}" class="form-control" id="document"
-                                                   aria-describedby="documentHelp">
-                                            <small id="documentHelp" class="form-text text-muted">Numero de documento
-                                                del cliente.</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <button type="submit" class="btn btn-primary">Registrar cliente</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
+
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
-<script src="../static/bootstrap/dist/js/bootstrap.min.js" th:src="@{/bootstrap/dist/js/bootstrap.min.js}"></script>
-</body>
+        <script src="../public/static/js/jquery.min.js" th:src="@{/public/js/jquery.min.js}"></script>
+        <script src="../public/static/bootstrap/dist/js/bootstrap.min.js" th:src="@{/public/bootstrap/dist/js/bootstrap.min.js}"></script>
+    </body>
 </html>

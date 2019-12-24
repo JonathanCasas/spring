@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head><title>Hola Mundo</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link href="../public/static/public/bootstrap/dist/css/bootstrap.min.css" th:href="@{/public/bootstrap/dist/css/bootstrap.min.css}"
+              rel="stylesheet"/>
+        <link href="../public/static/public/css/index.css" th:href="@{/public/css/index.css}" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form action="#" th:action="@{/users/registration}" method="POST" th:object="${userForm}">
+                                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                                        <div class="row">
+                                            <div class="col-md-8 form-group">
+                                                <input type="text" th:field="*{username}" class="form-control" placeholder="Username" autofocus="true">        
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8 form-group">
+                                                <input type="password" th:field="*{password}" class="form-control" placeholder="Contraseña" autofocus="true">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8 form-group">
+                                                <input type="password" th:field="*{passwordConfirm}" class="form-control" placeholder="Confirma tu contraseña">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8 form-group">
+                                                <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

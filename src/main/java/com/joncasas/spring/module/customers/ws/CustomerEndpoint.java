@@ -25,7 +25,7 @@ public class CustomerEndpoint {
 
     private static final String NAMESPACE_URI = "http://localhost:8080/";
 
-    private CustomerRepositoryInterface customerRepository;
+    private final CustomerRepositoryInterface customerRepository;
     ModelMapper mapper;
 
     public CustomerEndpoint(CustomerRepositoryInterface customerRepository, ModelMapper mapper) {
